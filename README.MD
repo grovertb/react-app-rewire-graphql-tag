@@ -8,10 +8,11 @@ yarn add react-app-rewire-graphql-tag
 ```
 in config-overrides.js:
 ```
-const rewireGqlTag = require('react-app-rewire-graphql-tag');
+const { override } = require('customize-cra')
 
-module.exports = function override(config, env) {
-    conf = rewireGqlTag(config,env);
-    return conf;
-}
+const graphqlTag = require('react-app-rewire-graphql-tag')
+
+module.exports = override(
+  graphqlTag
+)
 ```
